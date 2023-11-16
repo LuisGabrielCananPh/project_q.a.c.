@@ -9,29 +9,47 @@ links[4] = "eq_3.html"
 links[5] = "eq_4.html" 
 
 function easy() { 
-var a = 1+Math.round(Math.random()*5) 
-var i = a 
-location = links[i] 
+    location = sorteio(); 
 }
-function won0() {
-    var a = 1+Math.round(Math.random()*4) 
-    var i = a 
-    location = links[i] 
-    }  
+ 
 function lose(){
     location = "lose.html"
-
 }
 function voltar(){
     location = "lobby.html"
-
 }
 
 
-function won0() {
-var a = 1+Math.round(Math.random()*4) 
-var i = a 
-location = links[i] 
+function won() {
+    sorteio();
+    //location = sorteio() 
 } 
+
+
+function sorteio(){
+    /*
+    var a = 1+Math.round(Math.random()*5) 
+    var i = a 
+    return location = links[i];
+    */
+   
+    var maximo = 5;
+
+    var i, arr = [];
+        for (i = 0; i < maximo; i++) {
+        arr[i] = i + 1;
+    }
+    
+    var p, n, tmp;
+    for (p = arr.length; p;) {
+        n = Math.random() * p-- | 0;
+        tmp = arr[n];
+        arr[n] = arr[p];
+        arr[p] = tmp;
+    }
+
+    return 
+       
+}
 
 

@@ -64,3 +64,13 @@
     border-style: dotted;
     border-color: black;
 }
+#beasy{
+    border: 5px;
+    border-style: dotted;
+    border-color: black;
+    margin-left: 50%; 
+}
+#imge{
+    width:150px;
+    height:100px ;
+}
