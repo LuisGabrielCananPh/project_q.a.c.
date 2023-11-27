@@ -15,8 +15,8 @@ links[8] = "eq_7.html"
 links[9] = "eq_8.html"
 
 function easy(){ 
-    
-    location = sorteio();
+    sorteio()
+    location = next();
      
 }
  
@@ -32,15 +32,16 @@ function voltar(){
 }
 console.log("pontos="+pontos)
     console.log("pergunta="+sugestao)
-
+    console.log("result="+result);
 
 function won(){
+    
     pontos = (pontos + 1)
     q = (q + 1)
     location = next()
     console.log("pontos="+pontos)
     console.log("pergunta="+sugestao)
-
+    return pontos
 
 }   
  function end(){
@@ -49,10 +50,14 @@ function won(){
     }
  }       
 function next(){
-    let q = sorteio()
+    /*let q = sorteio()
     q = numero.slice(0, quantidade);
+*/
 
-    return links[numero[q]]
+const result = todos.slice(0, quantidade);
+
+        
+    return links[todos[q]]
 }
 
 
@@ -102,13 +107,11 @@ function sorteio(){
         todos[i] = tmp;
     }
 
-        const result = todos.slice(0, quantidade);
-        
-        console.log("result="+result);
-
         
 
-        return result[todos[q]];
+        
+    console.log("result="+todos);
+        return todos
          
         /*
         var sorteados = [];
