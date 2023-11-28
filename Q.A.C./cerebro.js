@@ -15,11 +15,13 @@ links[8] = "eq_7.html"
 links[9] = "eq_8.html"
 
 function easy(){ 
-    sorteio()
-    location = next();
+    
+    location = start();
      
 }
  
+//-------------------------------------------
+
 function lose(){
     location = "lose.html"
     pontos = 0
@@ -27,45 +29,83 @@ function lose(){
     console.log(pontos)
     
 }
+
+//-------------------------------------------
+
 function voltar(){
     location = "lobby.html"
 }
-console.log("pontos="+pontos)
-    console.log("pergunta="+sugestao)
-    console.log("result="+result);
+
+
+    //-------------------------------------------
 
 function won(){
     
     pontos = (pontos + 1)
-    q = (q + 1)
-    location = next()
-    console.log("pontos="+pontos)
-    console.log("pergunta="+sugestao)
-    return pontos
+    
+    next()
+    //location = 
+    start()
+    //console.log("pontos="+pontos)
+    //console.log("pergunta="+sugestao)
+    
 
-}   
+}
+
+//-------------------------------------------
+
+function next(){
+q = q + 1
+return q
+}
+
+//------------------------------------------- 
+
  function end(){
     if(9<pontos){ 
         location = "win.html"
     }
  }       
-function next(){
-    /*let q = sorteio()
-    q = numero.slice(0, quantidade);
-*/
+//-------------------------------------------
+ function start(){
+    
+let questoes = todos
 
-const result = todos.slice(0, quantidade);
-
-        
-    return links[todos[q]]
+const questao = questoes.slice(0, 9);
+console.log("todos="+q)
+console.log("todos="+questao)
+console.log("todos="+questao[q])
+   
+    return links[questoes[q]]
 }
 
 
- 
 
+//function sorteio(){
+    
+    var tmp;
+    const quantidade = 9, minimo = 1, maximo = 9;
+    const todos = [];
+    for (let i = minimo; i <= maximo; i++) { 
+        
+        todos.push(i);
+    }
 
-function sorteio(){
-    /*
+    for (let i = 0; i < quantidade; i++) {
+    
+        const j = Math.floor(Math.random() * todos.length);
+        const tmp = todos[j];
+        todos[j] = todos[i];
+        todos[i] = tmp;
+    }
+
+        
+
+        
+    
+        //return todos
+        
+        /*
     var a = 1+Math.round(Math.random()*5) 
     var i = a 
     return location = links[i];
@@ -91,27 +131,7 @@ function sorteio(){
     return links[tmp]
     */
    
-    var tmp;
-    const quantidade = 9, minimo = 1, maximo = 9;
-    const todos = [];
-    for (let i = minimo; i <= maximo; i++) { 
-        
-        todos.push(i);
-    }
-
-    for (let i = 0; i < quantidade; i++) {
     
-        const j = Math.floor(Math.random() * todos.length);
-        const tmp = todos[j];
-        todos[j] = todos[i];
-        todos[i] = tmp;
-    }
-
-        
-
-        
-    console.log("result="+todos);
-        return todos
          
         /*
         var sorteados = [];
@@ -130,7 +150,7 @@ function sorteio(){
     
     return links[sugestao]; // devolver o numero único
     */
-}
+//}
 
 
-
+ 
