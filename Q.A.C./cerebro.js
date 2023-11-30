@@ -1,4 +1,4 @@
-
+var f = 1
 var q = 0
 var pontos = 0
 var links = new Array(5)
@@ -13,11 +13,12 @@ links[6] = "eq_5.html"
 links[7] = "eq_6.html" 
 links[8] = "eq_7.html"
 links[9] = "eq_8.html"
+links[undefined] = "win.html"
 
 function easy(){ 
     
     location = start();
-     
+    
 }
  
 //-------------------------------------------
@@ -41,7 +42,7 @@ function voltar(){
 
 function won(){
     
-    pontos = (pontos + 1)
+    
     
     next()
     //location = 
@@ -62,27 +63,26 @@ return q
 //------------------------------------------- 
 
  function end(){
-    if(9<pontos){ 
-        location = "win.html"
+    if(questao[q]==undefined){ 
+        location = won();
     }
  }       
 //-------------------------------------------
  function start(){
-    
-let questoes = todos
+     
+let questoes = if()
 
 const questao = questoes.slice(0, 9);
 console.log("todos="+q)
 console.log("todos="+questao)
 console.log("todos="+questao[q])
-   
+f = f + 1  
     return links[questoes[q]]
 }
 
 
+if(f>1){
 
-//function sorteio(){
-    
     var tmp;
     const quantidade = 9, minimo = 1, maximo = 9;
     const todos = [];
@@ -98,12 +98,10 @@ console.log("todos="+questao[q])
         todos[j] = todos[i];
         todos[i] = tmp;
     }
-
-        
-
-        
+    return todos
+}
     
-        //return todos
+        //
         
         /*
     var a = 1+Math.round(Math.random()*5) 
@@ -118,6 +116,7 @@ console.log("todos="+questao[q])
         for (i = 0; i < maximo; i++) {
         arr[i] = i + 1;
     }
+function sorteio()
     
     var p, n, tmp;
     for (p = arr.length; p;) {
@@ -129,11 +128,7 @@ console.log("todos="+questao[q])
     console.log("p="+p+" n="+n+" tmp="+tmp)
 
     return links[tmp]
-    */
-   
-    
-         
-        /*
+    //-------------------------------------------
         var sorteados = [];
         var valorMaximo = 9;
 
@@ -150,7 +145,7 @@ console.log("todos="+questao[q])
     
     return links[sugestao]; // devolver o numero único
     */
-//}
+
 
 
  
