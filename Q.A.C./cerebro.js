@@ -17,16 +17,17 @@ links[undefined] = "win.html"
 
 function easy(){ 
     
+    botao()
     location = start();
     
 }
- 
+
 //-------------------------------------------
 
 function lose(){
     location = "lose.html"
-    pontos = 0
-    q = 0
+    
+    q = q - q
     console.log(pontos)
     
 }
@@ -63,25 +64,40 @@ return q
 //------------------------------------------- 
 
  function end(){
-    if(questao[q]==undefined){ 
-        location = won();
+    if(questao[q]=="undefined"){ 
+        location = "win.html";
     }
  }       
 //-------------------------------------------
  function start(){
-     
-let questoes = if()
+    
+let questoes = todos  
 
 const questao = questoes.slice(0, 9);
-console.log("todos="+q)
-console.log("todos="+questao)
-console.log("todos="+questao[q])
-f = f + 1  
+console.log("q="+q)
+console.log("questão="+questao)
+console.log("questao[q]="+questao[q])
+ 
     return links[questoes[q]]
 }
 
+//-------------------------------------------
 
-if(f>1){
+function botao(){
+    var button = document.querySelector('#imge');
+
+var h = 0;
+    
+button.addEventListener('click', function click(e) {
+    h++;
+    sorteio();
+    button.removeEventListener('click', click);
+});
+}
+
+//-------------------------------------------
+
+function sorteio(){
 
     var tmp;
     const quantidade = 9, minimo = 1, maximo = 9;
