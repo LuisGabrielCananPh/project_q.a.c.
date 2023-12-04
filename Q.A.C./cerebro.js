@@ -17,7 +17,7 @@ links[undefined] = "win.html"
 
 function easy(){ 
     
-    botao()
+
     location = start();
     
 }
@@ -46,8 +46,7 @@ function won(){
     
     
     next()
-    //location = 
-    start()
+    location = start()
     //console.log("pontos="+pontos)
     //console.log("pergunta="+sugestao)
     
@@ -58,7 +57,7 @@ function won(){
 
 function next(){
 q = q + 1
-return q
+
 }
 
 //------------------------------------------- 
@@ -67,22 +66,20 @@ return q
     if(questao[q]=="undefined"){ 
         location = "win.html";
     }
- }       
-//-------------------------------------------
- function start(){
-    
-let questoes = todos  
+ } 
 
-const questao = questoes.slice(0, 9);
-console.log("q="+q)
-console.log("questão="+questao)
-console.log("questao[q]="+questao[q])
- 
-    return links[questoes[q]]
+//-------------------------------------------
+
+function start(){
+    
+let q = next()
+console.log(q)
+    return links[q]
 }
 
 //-------------------------------------------
 
+/*
 function botao(){
     var button = document.querySelector('#imge');
 
@@ -96,7 +93,7 @@ button.addEventListener('click', function click(e) {
 }
 
 //-------------------------------------------
-
+/*
 function sorteio(){
 
     var tmp;
