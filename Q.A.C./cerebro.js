@@ -1,35 +1,29 @@
-var f = 1
-var q = 0
-var pontos = 0
-var links = new Array(5)
-var sugestao = 0
 
-links[1] = "eq_0.html" 
-links[2] = "eq_1.html" 
-links[3] = "eq_2.html" 
-links[4] = "eq_3.html" 
-links[5] = "eq_4.html" 
-links[6] = "eq_5.html" 
-links[7] = "eq_6.html" 
-links[8] = "eq_7.html"
-links[9] = "eq_8.html"
-links[undefined] = "win.html"
+var q = 0;
+
+var links = new Array(9);
+
+links[0] = "eq_0.html"
+links[1] = "eq_1.html" 
+links[2] = "eq_2.html" 
+links[3] = "eq_3.html" 
+links[4] = "eq_4.html" 
+links[5] = "eq_5.html" 
+links[6] = "eq_6.html" 
+links[7] = "eq_7.html"
+links[8] = "eq_8.html"
+links[9] = "eq_9.html"
+links[10] = "win.html"
 
 function easy(){ 
-    
-
-    location = start();
-    
+    location = links[0]
 }
 
 //-------------------------------------------
 
 function lose(){
-    location = "lose.html"
-    
     q = q - q
-    console.log(pontos)
-    
+    location = "lose.html"
 }
 
 //-------------------------------------------
@@ -38,46 +32,138 @@ function voltar(){
     location = "lobby.html"
 }
 
+//-------------------------------------------
 
-    //-------------------------------------------
-
-function won(){
-    
-    
-    
-    next()
-    location = start()
-    //console.log("pontos="+pontos)
-    //console.log("pergunta="+sugestao)
-    
-
+async function won(){
+   
+    location = start();
 }
 
 //-------------------------------------------
 
-function next(){
-q = q + 1
-
-}
-
-//------------------------------------------- 
-
- function end(){
-    if(questao[q]=="undefined"){ 
-        location = "win.html";
+function next(){    
+    q++;
+    return q;
     }
- } 
 
-//-------------------------------------------
+
 
 function start(){
+  
+    q = next();
+
+    console.log(q);
+    console.log(links[q]); //eq_1.html
     
-let q = next()
-console.log(q)
-    return links[q]
+    //location = links[q];
+
+    return links[q];
 }
 
+/*
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+async function start(){
+
+    await sleep(1000);
+
+    q = next();
+
+    console.log(q);
+    console.log(links[q]); //eq_1.html
+    
+    location = links[q];
+
+    return links[q];
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-------------------------------------------
+  
+//esses coisas aqui são lixo
 
 /*
 function botao(){
@@ -162,3 +248,180 @@ function sorteio()
 
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+
+   
+   
+   
+    //tá fuçando o que aqui?
