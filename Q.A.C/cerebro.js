@@ -48,10 +48,8 @@ async function won(){
     return q;
     }
 */
-var q= function(valor)
-{
-    window.location = links[q]
-}
+var q = []
+
 console.log(q);
         console.log(links[q])
     const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
@@ -65,7 +63,7 @@ console.log(q);
         console.log(q);
         console.log(links[q]); //eq_1.html
         
-        Window.location =  q;
+        localStorage.setItem("q","q");
         location = links[q];
     
        // return links[q];
@@ -90,6 +88,9 @@ async function start(){
     return links[q];
 }
 */
+
+
+
 
 
 
